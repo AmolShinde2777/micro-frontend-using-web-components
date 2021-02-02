@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue - Web Component</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #content1,
+        #content2,
+        #content3 {
+            display: none;
+        }
+
+        #content1 {
+            background: white;
+            color: black;
+            padding: 5em;
+        }
+
+        #content2 {
+            background: white;
+            color: black;
+            padding: 5em;
+        }
+
+        #content3 {
+            background: white;
+            color: black;
+            padding: 5em;
+        }
+
+        #content1:target {
+            display: block;
+        }
+
+        #content2:target {
+            display: block;
+        }
+
+        #content3:target {
+            display: block;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: rgb(36, 150, 36);
+                }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <!--Load the web component polyfill-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.2.0/webcomponents-loader.js"></script>
+    <script src="./src/v-card.min.js"></script>
+    <script src="./src/headerApp-elements-es5.js"></script>
+</head>
+
+<body>
+  <ul>
+    <li><a id="vuejsAppId" href="#content1">VueJs</a></li>
+    <li><a id="angularAppId" href="#content2">Angular</a></li>
+    <li><a id="reactAppId" href="#content3">React</a></li>
+  </ul>
+
+  <div>
+    <div id="content1">
+      <v-card title="Vue JS web component"></v-card>
+    </div>
+    <div id="content2">
+      <header-app></header-app>
+    </div>
+    <div id="content3">
+      <h1>React web component</h1>
+    </div>
+  </div>
+</body>
+
+</html>
