@@ -1,0 +1,39 @@
+<div class="main-container">
+
+  <div>
+    <h3>Student Details</h3>
+  </div>
+
+  <div class="stdTable">
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let student of studentData; let indx = index">
+        <td>{{student.id}}</td>
+        <td>{{student.firstname}}</td>
+        <td>{{student.lastname}}</td>
+        <td>{{student.dob}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.address}}</td>
+        <td id={{student.id}}>
+          <button type="button" (click)="editRecord($event, indx)" style="margin-right: 20px;">EDIT</button>
+          <button type="button" (click)="deleteRecord($event, indx)">DELETE</button>
+        </td>
+      </tr>
+    </table>
+
+    <div *ngIf="studentData && studentData.length === 0" style="margin-top: 50px;">
+      No record found.
+    </div>
+
+  </div>
+
+</div>
+
